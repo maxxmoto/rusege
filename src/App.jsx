@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { tasksDatabase } from './tasks/index.js';
 
 const Icons = {
@@ -116,7 +116,6 @@ export default function App() {
             @page { margin: 15mm; size: A4; }
             body { font-family: "Times New Roman", Times, serif; background: white !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .page-break { break-after: page; }
-            .no-break { break-inside: avoid; }
           }
           .a4-page {
             width: 210mm; min-height: 297mm; background: white; margin: 0 auto; margin-top: 80px; margin-bottom: 20px;
@@ -278,7 +277,7 @@ export default function App() {
               <p className="text-slate-600 mb-10 max-w-2xl mx-auto text-lg leading-relaxed">
                 Полноценные варианты из 26 заданий, подробный разбор ошибок, банк заданий для точечной тренировки и генерация PDF с бланками для печати.
               </p>
-              <p className="text-sm text-slate-400 mb-6">В базе: {getTaskCount(1)+getTaskCount(2)+getTaskCount(3)+getTaskCount(4)+getTaskCount(5)} заданий</p>
+              <p className="text-sm text-slate-400 mb-6">В базе: задания всех типов (1–26)</p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <button onClick={generateTest} className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-2xl shadow-lg shadow-blue-600/30 transition-all transform hover:-translate-y-1 flex items-center justify-center text-lg">
                   <Icons.Play /> <span className="ml-2">Сгенерировать вариант</span>
@@ -290,6 +289,7 @@ export default function App() {
             </div>
           </div>
         )}
+
         {activeTab === 'test' && currentTest && (
           <div className="animate-fade-in">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4 bg-white p-4 rounded-2xl shadow-sm border border-slate-200">

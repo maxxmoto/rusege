@@ -1,4 +1,4 @@
-﻿import { tasks as t1_2 } from './tasks1-2.js';
+import { tasks as t1_2 } from './tasks1-2.js';
 import { tasks as t3_4 } from './tasks3-4.js';
 import { tasks as t5_8 } from './tasks5-8.js';
 import { tasks as t9_12 } from './tasks9-12.js';
