@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+п»їimport { useState, useEffect } from 'react';
 import { tasksDatabase } from './tasks/index.js';
 
 const Icons = {
@@ -49,8 +49,8 @@ export default function App() {
       } else {
         newTest.push({
           num: i, originalNum: i, id: 'mock-' + i,
-          text: 'Текст задания №' + i + ' находится в разработке...',
-          answer: '1', explanation: 'Разбор появится позже.'
+          text: 'РўРµРєСЃС‚ Р·Р°РґР°РЅРёСЏ в„–' + i + ' РЅР°С…РѕРґРёС‚СЃСЏ РІ СЂР°Р·СЂР°Р±РѕС‚РєРµ...',
+          answer: '1', explanation: 'Р Р°Р·Р±РѕСЂ РїРѕСЏРІРёС‚СЃСЏ РїРѕР·Р¶Рµ.'
         });
       }
     }
@@ -98,15 +98,15 @@ export default function App() {
         <div className="fixed top-0 left-0 right-0 bg-slate-900 text-white p-4 flex justify-between items-center z-50 print:hidden shadow-lg">
           <div className="flex items-center space-x-4">
             <button onClick={() => setActiveTab('test')} className="flex items-center text-slate-300 hover:text-white transition">
-              <Icons.ArrowLeft /> <span className="ml-2 font-medium">Вернуться</span>
+              <Icons.ArrowLeft /> <span className="ml-2 font-medium">Р’РµСЂРЅСѓС‚СЊСЃСЏ</span>
             </button>
             <div className="h-6 w-px bg-slate-600"></div>
-            <span className="font-semibold text-lg">Режим печати</span>
+            <span className="font-semibold text-lg">Р РµР¶РёРј РїРµС‡Р°С‚Рё</span>
           </div>
           <div className="flex space-x-3 items-center">
-            <span className="hidden sm:inline text-sm text-slate-300">Нажмите Ctrl+P или кнопку:</span>
+            <span className="hidden sm:inline text-sm text-slate-300">РќР°Р¶РјРёС‚Рµ Ctrl+P РёР»Рё РєРЅРѕРїРєСѓ:</span>
             <button onClick={() => window.print()} className="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-lg font-bold flex items-center shadow-md transition-colors">
-              <Icons.Printer /> <span className="ml-2">Скачать PDF</span>
+              <Icons.Printer /> <span className="ml-2">РЎРєР°С‡Р°С‚СЊ PDF</span>
             </button>
           </div>
         </div>
@@ -133,39 +133,39 @@ export default function App() {
           <div className="pt-4">
             <div className="a4-page flex flex-col items-center justify-center" style={{minHeight: '297mm'}}>
               <div className="absolute top-8 left-10 right-10 flex justify-between text-[10pt] text-gray-500">
-                <span>РусЕГЭ</span>
+                <span>Р СѓСЃР•Р“Р­</span>
                 <span>{currentDate}</span>
               </div>
               <div className="flex-1 flex flex-col items-center justify-center w-full">
-                <h1 style={{fontSize: '24pt', fontWeight: 'bold', marginBottom: '16px', textAlign: 'center'}}>ЕДИНЫЙ ГОСУДАРСТВЕННЫЙ ЭКЗАМЕН</h1>
-                <h2 style={{fontSize: '18pt', marginBottom: '48px', textAlign: 'center', textTransform: 'uppercase'}}>ПО РУССКОМУ ЯЗЫКУ</h2>
+                <h1 style={{fontSize: '24pt', fontWeight: 'bold', marginBottom: '16px', textAlign: 'center'}}>Р•Р”РРќР«Р™ Р“РћРЎРЈР”РђР РЎРўР’Р•РќРќР«Р™ Р­РљР—РђРњР•Рќ</h1>
+                <h2 style={{fontSize: '18pt', marginBottom: '48px', textAlign: 'center', textTransform: 'uppercase'}}>РџРћ Р РЈРЎРЎРљРћРњРЈ РЇР—Р«РљРЈ</h2>
                 <div style={{fontSize: '16pt', border: '3px solid black', padding: '16px 36px', fontWeight: 'bold', letterSpacing: '2px'}}>
-                  Вариант RUSEGE-{variantId}
+                  Р’Р°СЂРёР°РЅС‚ RUSEGE-{variantId}
                 </div>
               </div>
               <div style={{textAlign: 'center', color: '#666', marginTop: 'auto'}}>
                 <p>rusege.ru</p>
-                <p style={{marginTop: '8px', fontWeight: 'bold'}}>Стр. 1</p>
+                <p style={{marginTop: '8px', fontWeight: 'bold'}}>РЎС‚СЂ. 1</p>
               </div>
             </div>
 
             <div className="a4-page">
-              <div style={{position: 'absolute', top: '8px', right: '20px', fontSize: '10pt', color: '#999'}}>Стр. 2</div>
-              <h3 style={{fontWeight: 'bold', textAlign: 'center', fontSize: '16pt', marginBottom: '24px', marginTop: '20px', textTransform: 'uppercase'}}>Инструкция по выполнению работы</h3>
+              <div style={{position: 'absolute', top: '8px', right: '20px', fontSize: '10pt', color: '#999'}}>РЎС‚СЂ. 2</div>
+              <h3 style={{fontWeight: 'bold', textAlign: 'center', fontSize: '16pt', marginBottom: '24px', marginTop: '20px', textTransform: 'uppercase'}}>РРЅСЃС‚СЂСѓРєС†РёСЏ РїРѕ РІС‹РїРѕР»РЅРµРЅРёСЋ СЂР°Р±РѕС‚С‹</h3>
               <div style={{fontSize: '12pt', lineHeight: '1.6', textAlign: 'justify'}}>
-                <p style={{textIndent: '20px', marginBottom: '12px'}}>На выполнение экзаменационной работы по русскому языку отводится 3 часа 30 минут (210 минут). Работа состоит из двух частей, включающих 27 заданий.</p>
-                <p style={{textIndent: '20px', marginBottom: '12px'}}>Часть 1 содержит 26 заданий с кратким ответом. Ответы к заданиям 1–26 записываются в виде цифры (числа) или слова (нескольких слов), последовательности цифр (чисел) без пробелов, запятых и других дополнительных символов.</p>
-                <p style={{textIndent: '20px', marginBottom: '12px'}}>Часть 2 содержит 1 задание с развёрнутым ответом (сочинение).</p>
-                <p style={{textIndent: '20px', marginBottom: '12px'}}>Все бланки заполняются яркими чёрными чернилами. При выполнении заданий можно пользоваться черновиком.</p>
+                <p style={{textIndent: '20px', marginBottom: '12px'}}>РќР° РІС‹РїРѕР»РЅРµРЅРёРµ СЌРєР·Р°РјРµРЅР°С†РёРѕРЅРЅРѕР№ СЂР°Р±РѕС‚С‹ РїРѕ СЂСѓСЃСЃРєРѕРјСѓ СЏР·С‹РєСѓ РѕС‚РІРѕРґРёС‚СЃСЏ 3 С‡Р°СЃР° 30 РјРёРЅСѓС‚ (210 РјРёРЅСѓС‚). Р Р°Р±РѕС‚Р° СЃРѕСЃС‚РѕРёС‚ РёР· РґРІСѓС… С‡Р°СЃС‚РµР№, РІРєР»СЋС‡Р°СЋС‰РёС… 27 Р·Р°РґР°РЅРёР№.</p>
+                <p style={{textIndent: '20px', marginBottom: '12px'}}>Р§Р°СЃС‚СЊ 1 СЃРѕРґРµСЂР¶РёС‚ 26 Р·Р°РґР°РЅРёР№ СЃ РєСЂР°С‚РєРёРј РѕС‚РІРµС‚РѕРј. РћС‚РІРµС‚С‹ Рє Р·Р°РґР°РЅРёСЏРј 1вЂ“26 Р·Р°РїРёСЃС‹РІР°СЋС‚СЃСЏ РІ РІРёРґРµ С†РёС„СЂС‹ (С‡РёСЃР»Р°) РёР»Рё СЃР»РѕРІР° (РЅРµСЃРєРѕР»СЊРєРёС… СЃР»РѕРІ), РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚Рё С†РёС„СЂ (С‡РёСЃРµР») Р±РµР· РїСЂРѕР±РµР»РѕРІ, Р·Р°РїСЏС‚С‹С… Рё РґСЂСѓРіРёС… РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹С… СЃРёРјРІРѕР»РѕРІ.</p>
+                <p style={{textIndent: '20px', marginBottom: '12px'}}>Р§Р°СЃС‚СЊ 2 СЃРѕРґРµСЂР¶РёС‚ 1 Р·Р°РґР°РЅРёРµ СЃ СЂР°Р·РІС‘СЂРЅСѓС‚С‹Рј РѕС‚РІРµС‚РѕРј (СЃРѕС‡РёРЅРµРЅРёРµ).</p>
+                <p style={{textIndent: '20px', marginBottom: '12px'}}>Р’СЃРµ Р±Р»Р°РЅРєРё Р·Р°РїРѕР»РЅСЏСЋС‚СЃСЏ СЏСЂРєРёРјРё С‡С‘СЂРЅС‹РјРё С‡РµСЂРЅРёР»Р°РјРё. РџСЂРё РІС‹РїРѕР»РЅРµРЅРёРё Р·Р°РґР°РЅРёР№ РјРѕР¶РЅРѕ РїРѕР»СЊР·РѕРІР°С‚СЊСЃСЏ С‡РµСЂРЅРѕРІРёРєРѕРј.</p>
               </div>
               <div style={{marginTop: '32px', border: '2px solid black', padding: '16px', textAlign: 'center', fontStyle: 'italic', fontWeight: 'bold', fontSize: '16px'}}>
-                Желаем успеха!
+                Р–РµР»Р°РµРј СѓСЃРїРµС…Р°!
               </div>
             </div>
 
             <div className="a4-page">
-              <div style={{position: 'absolute', top: '8px', right: '20px', fontSize: '10pt', color: '#999'}}>Стр. 3</div>
-              <h3 style={{fontWeight: 'bold', textAlign: 'center', fontSize: '16pt', marginBottom: '20px', marginTop: '16px', textTransform: 'uppercase'}}>Часть 1</h3>
+              <div style={{position: 'absolute', top: '8px', right: '20px', fontSize: '10pt', color: '#999'}}>РЎС‚СЂ. 3</div>
+              <h3 style={{fontWeight: 'bold', textAlign: 'center', fontSize: '16pt', marginBottom: '20px', marginTop: '16px', textTransform: 'uppercase'}}>Р§Р°СЃС‚СЊ 1</h3>
               <div style={{fontSize: '12pt', lineHeight: '1.5'}}>
                 {currentTest.slice(0, 13).map((task, idx) => (
                   <div key={task.id} style={{marginBottom: '16px', pageBreakInside: 'avoid'}}>
@@ -173,7 +173,7 @@ export default function App() {
                       <div style={{fontWeight: 'bold', fontSize: '13pt', minWidth: '24px'}}>{task.num}.</div>
                       <div style={{flex: 1, whiteSpace: 'pre-wrap'}}>{task.text}</div>
                     </div>
-                    <div style={{marginTop: '8px', fontStyle: 'italic', color: '#555'}}>Ответ: _____________________</div>
+                    <div style={{marginTop: '8px', fontStyle: 'italic', color: '#555'}}>РћС‚РІРµС‚: _____________________</div>
                     {idx < 12 && <hr style={{marginTop: '8px', border: 'none', borderTop: '1px solid #ccc'}} />}
                   </div>
                 ))}
@@ -181,7 +181,7 @@ export default function App() {
             </div>
 
             <div className="a4-page">
-              <div style={{position: 'absolute', top: '8px', right: '20px', fontSize: '10pt', color: '#999'}}>Стр. 4</div>
+              <div style={{position: 'absolute', top: '8px', right: '20px', fontSize: '10pt', color: '#999'}}>РЎС‚СЂ. 4</div>
               <div style={{fontSize: '12pt', lineHeight: '1.5', marginTop: '16px'}}>
                 {currentTest.slice(13, 26).map((task) => (
                   <div key={task.id} style={{marginBottom: '16px', pageBreakInside: 'avoid'}}>
@@ -189,30 +189,30 @@ export default function App() {
                       <div style={{fontWeight: 'bold', fontSize: '13pt', minWidth: '24px'}}>{task.num}.</div>
                       <div style={{flex: 1, whiteSpace: 'pre-wrap'}}>{task.text}</div>
                     </div>
-                    <div style={{marginTop: '8px', fontStyle: 'italic', color: '#555'}}>Ответ: _____________________</div>
+                    <div style={{marginTop: '8px', fontStyle: 'italic', color: '#555'}}>РћС‚РІРµС‚: _____________________</div>
                     <hr style={{marginTop: '8px', border: 'none', borderTop: '1px solid #ccc'}} />
                   </div>
                 ))}
               </div>
               <div style={{marginTop: '32px', borderTop: '2px solid black', paddingTop: '16px'}}>
-                <h3 style={{fontWeight: 'bold', textAlign: 'center', fontSize: '14pt', marginBottom: '8px', textTransform: 'uppercase'}}>Часть 2</h3>
-                <p style={{fontWeight: 'bold', marginBottom: '8px'}}>Задание 27.</p>
-                <p style={{fontSize: '12pt'}}>Напишите сочинение по прочитанному тексту. Сформулируйте одну из проблем, поставленных автором текста. Объём сочинения – не менее 150 слов.</p>
+                <h3 style={{fontWeight: 'bold', textAlign: 'center', fontSize: '14pt', marginBottom: '8px', textTransform: 'uppercase'}}>Р§Р°СЃС‚СЊ 2</h3>
+                <p style={{fontWeight: 'bold', marginBottom: '8px'}}>Р—Р°РґР°РЅРёРµ 27.</p>
+                <p style={{fontSize: '12pt'}}>РќР°РїРёС€РёС‚Рµ СЃРѕС‡РёРЅРµРЅРёРµ РїРѕ РїСЂРѕС‡РёС‚Р°РЅРЅРѕРјСѓ С‚РµРєСЃС‚Сѓ. РЎС„РѕСЂРјСѓР»РёСЂСѓР№С‚Рµ РѕРґРЅСѓ РёР· РїСЂРѕР±Р»РµРј, РїРѕСЃС‚Р°РІР»РµРЅРЅС‹С… Р°РІС‚РѕСЂРѕРј С‚РµРєСЃС‚Р°. РћР±СЉС‘Рј СЃРѕС‡РёРЅРµРЅРёСЏ вЂ“ РЅРµ РјРµРЅРµРµ 150 СЃР»РѕРІ.</p>
               </div>
             </div>
 
             <div className="a4-page">
-              <div style={{position: 'absolute', top: '8px', right: '20px', fontSize: '10pt', color: '#999'}}>Стр. 5</div>
-              <h3 style={{fontWeight: 'bold', textAlign: 'center', fontSize: '18pt', marginBottom: '24px', marginTop: '20px', textTransform: 'uppercase', letterSpacing: '3px'}}>Бланк ответов №1</h3>
+              <div style={{position: 'absolute', top: '8px', right: '20px', fontSize: '10pt', color: '#999'}}>РЎС‚СЂ. 5</div>
+              <h3 style={{fontWeight: 'bold', textAlign: 'center', fontSize: '18pt', marginBottom: '24px', marginTop: '20px', textTransform: 'uppercase', letterSpacing: '3px'}}>Р‘Р»Р°РЅРє РѕС‚РІРµС‚РѕРІ в„–1</h3>
               <div style={{border: '3px solid black', padding: '16px', marginBottom: '24px', backgroundColor: '#fafafa'}}>
                 <div style={{display: 'flex', flexWrap: 'wrap', gap: '16px', marginBottom: '12px'}}>
-                  <div style={{borderBottom: '1px solid black', flex: 1, minWidth: '200px', display: 'flex'}}><span style={{fontWeight: 'bold', minWidth: '80px'}}>Регион:</span><span style={{flex: 1}}></span></div>
-                  <div style={{borderBottom: '1px solid black', flex: 1, minWidth: '200px', display: 'flex'}}><span style={{fontWeight: 'bold', minWidth: '80px'}}>Код ППЭ:</span><span style={{flex: 1}}></span></div>
-                  <div style={{borderBottom: '1px solid black', flex: 1, minWidth: '200px', display: 'flex'}}><span style={{fontWeight: 'bold', minWidth: '80px'}}>Предмет:</span><span style={{textTransform: 'uppercase', letterSpacing: '2px'}}>Русский язык</span></div>
-                  <div style={{borderBottom: '1px solid black', flex: 1, minWidth: '200px', display: 'flex'}}><span style={{fontWeight: 'bold', minWidth: '80px'}}>Вариант:</span><span style={{fontWeight: 'bold'}}>RUSEGE-{variantId}</span></div>
+                  <div style={{borderBottom: '1px solid black', flex: 1, minWidth: '200px', display: 'flex'}}><span style={{fontWeight: 'bold', minWidth: '80px'}}>Р РµРіРёРѕРЅ:</span><span style={{flex: 1}}></span></div>
+                  <div style={{borderBottom: '1px solid black', flex: 1, minWidth: '200px', display: 'flex'}}><span style={{fontWeight: 'bold', minWidth: '80px'}}>РљРѕРґ РџРџР­:</span><span style={{flex: 1}}></span></div>
+                  <div style={{borderBottom: '1px solid black', flex: 1, minWidth: '200px', display: 'flex'}}><span style={{fontWeight: 'bold', minWidth: '80px'}}>РџСЂРµРґРјРµС‚:</span><span style={{textTransform: 'uppercase', letterSpacing: '2px'}}>Р СѓСЃСЃРєРёР№ СЏР·С‹Рє</span></div>
+                  <div style={{borderBottom: '1px solid black', flex: 1, minWidth: '200px', display: 'flex'}}><span style={{fontWeight: 'bold', minWidth: '80px'}}>Р’Р°СЂРёР°РЅС‚:</span><span style={{fontWeight: 'bold'}}>RUSEGE-{variantId}</span></div>
                 </div>
               </div>
-              <p style={{textAlign: 'center', fontWeight: 'bold', fontSize: '14pt', marginBottom: '20px', textTransform: 'uppercase'}}>Результаты выполнения заданий (Часть 1)</p>
+              <p style={{textAlign: 'center', fontWeight: 'bold', fontSize: '14pt', marginBottom: '20px', textTransform: 'uppercase'}}>Р РµР·СѓР»СЊС‚Р°С‚С‹ РІС‹РїРѕР»РЅРµРЅРёСЏ Р·Р°РґР°РЅРёР№ (Р§Р°СЃС‚СЊ 1)</p>
               <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px 32px'}}>
                 {currentTest.map((task) => (
                   <div key={'blank-' + task.num} style={{display: 'flex', alignItems: 'center', gap: '8px'}}>
@@ -228,9 +228,9 @@ export default function App() {
             </div>
 
             <div className="a4-page" style={{display: 'flex', flexDirection: 'column'}}>
-              <div style={{position: 'absolute', top: '8px', right: '20px', fontSize: '10pt', color: '#999'}}>Стр. 6</div>
-              <h3 style={{fontWeight: 'bold', textAlign: 'center', fontSize: '18pt', marginBottom: '8px', marginTop: '16px', textTransform: 'uppercase'}}>Бланк ответов №2</h3>
-              <p style={{textAlign: 'center', fontStyle: 'italic', color: '#666', marginBottom: '20px'}}>Для задания с развёрнутым ответом (Задание 27)</p>
+              <div style={{position: 'absolute', top: '8px', right: '20px', fontSize: '10pt', color: '#999'}}>РЎС‚СЂ. 6</div>
+              <h3 style={{fontWeight: 'bold', textAlign: 'center', fontSize: '18pt', marginBottom: '8px', marginTop: '16px', textTransform: 'uppercase'}}>Р‘Р»Р°РЅРє РѕС‚РІРµС‚РѕРІ в„–2</h3>
+              <p style={{textAlign: 'center', fontStyle: 'italic', color: '#666', marginBottom: '20px'}}>Р”Р»СЏ Р·Р°РґР°РЅРёСЏ СЃ СЂР°Р·РІС‘СЂРЅСѓС‚С‹Рј РѕС‚РІРµС‚РѕРј (Р—Р°РґР°РЅРёРµ 27)</p>
               <div style={{flex: 1, border: '2px solid black', backgroundImage: 'linear-gradient(to right, #ddd 1px, transparent 1px), linear-gradient(to bottom, #ddd 1px, transparent 1px)', backgroundSize: '20px 20px', minHeight: '200mm'}}></div>
             </div>
           </div>
@@ -248,22 +248,22 @@ export default function App() {
               <div className="w-9 h-9 bg-gradient-to-br from-blue-600 to-indigo-700 text-white flex items-center justify-center rounded-xl mr-3 shadow-md">
                 <Icons.Logo />
               </div>
-              <span className="font-extrabold text-2xl tracking-tight text-slate-900">РусЕГЭ</span>
+              <span className="font-extrabold text-2xl tracking-tight text-slate-900">Р СѓСЃР•Р“Р­</span>
             </div>
             <div className="flex space-x-1 sm:space-x-2 items-center overflow-x-auto no-scrollbar">
               <button onClick={() => setActiveTab('home')} className={`px-3 py-2 rounded-lg text-sm font-semibold flex items-center transition-colors ${activeTab === 'home' ? 'bg-blue-50 text-blue-700' : 'text-slate-600 hover:bg-slate-100'}`}>
-                <Icons.Home /> <span className="hidden sm:inline ml-2">Главная</span>
+                <Icons.Home /> <span className="hidden sm:inline ml-2">Р“Р»Р°РІРЅР°СЏ</span>
               </button>
               <button onClick={() => setActiveTab('bank')} className={`px-3 py-2 rounded-lg text-sm font-semibold flex items-center transition-colors ${activeTab === 'bank' ? 'bg-indigo-50 text-indigo-700' : 'text-slate-600 hover:bg-slate-100'}`}>
-                <Icons.Book /> <span className="hidden sm:inline ml-2">Банк заданий</span>
+                <Icons.Book /> <span className="hidden sm:inline ml-2">Р‘Р°РЅРє Р·Р°РґР°РЅРёР№</span>
               </button>
               {currentTest && (
                 <button onClick={() => setActiveTab('test')} className={`px-3 py-2 rounded-lg text-sm font-semibold flex items-center transition-colors ${activeTab === 'test' ? 'bg-blue-50 text-blue-700' : 'text-slate-600 hover:bg-slate-100'}`}>
-                  <Icons.Play /> <span className="hidden sm:inline ml-2">Вариант</span>
+                  <Icons.Play /> <span className="hidden sm:inline ml-2">Р’Р°СЂРёР°РЅС‚</span>
                 </button>
               )}
               <button onClick={() => setActiveTab('stats')} className={`px-3 py-2 rounded-lg text-sm font-semibold flex items-center transition-colors ${activeTab === 'stats' ? 'bg-blue-50 text-blue-700' : 'text-slate-600 hover:bg-slate-100'}`}>
-                <Icons.BarChart /> <span className="hidden sm:inline ml-2">Статистика</span>
+                <Icons.BarChart /> <span className="hidden sm:inline ml-2">РЎС‚Р°С‚РёСЃС‚РёРєР°</span>
               </button>
             </div>
           </div>
@@ -274,17 +274,17 @@ export default function App() {
         {activeTab === 'home' && (
           <div className="bg-white rounded-3xl shadow-sm border border-slate-200 p-8 sm:p-12 text-center animate-fade-in relative overflow-hidden">
             <div className="relative z-10">
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">Твой тренажёр для ЕГЭ по русскому языку</h1>
+              <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">РўРІРѕР№ С‚СЂРµРЅР°Р¶С‘СЂ РґР»СЏ Р•Р“Р­ РїРѕ СЂСѓСЃСЃРєРѕРјСѓ СЏР·С‹РєСѓ</h1>
               <p className="text-slate-600 mb-10 max-w-2xl mx-auto text-lg leading-relaxed">
-                Полноценные варианты из 26 заданий, подробный разбор ошибок, банк заданий для точечной тренировки и генерация PDF с бланками для печати.
+                РџРѕР»РЅРѕС†РµРЅРЅС‹Рµ РІР°СЂРёР°РЅС‚С‹ РёР· 26 Р·Р°РґР°РЅРёР№, РїРѕРґСЂРѕР±РЅС‹Р№ СЂР°Р·Р±РѕСЂ РѕС€РёР±РѕРє, Р±Р°РЅРє Р·Р°РґР°РЅРёР№ РґР»СЏ С‚РѕС‡РµС‡РЅРѕР№ С‚СЂРµРЅРёСЂРѕРІРєРё Рё РіРµРЅРµСЂР°С†РёСЏ PDF СЃ Р±Р»Р°РЅРєР°РјРё РґР»СЏ РїРµС‡Р°С‚Рё.
               </p>
-              <p className="text-sm text-slate-400 mb-6">В базе: {getTaskCount(1)+getTaskCount(2)+getTaskCount(3)+getTaskCount(4)+getTaskCount(5)} заданий</p>
+              <p className="text-sm text-slate-400 mb-6">Р’ Р±Р°Р·Рµ: {getTaskCount(1)+getTaskCount(2)+getTaskCount(3)+getTaskCount(4)+getTaskCount(5)} Р·Р°РґР°РЅРёР№</p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <button onClick={generateTest} className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-2xl shadow-lg shadow-blue-600/30 transition-all transform hover:-translate-y-1 flex items-center justify-center text-lg">
-                  <Icons.Play /> <span className="ml-2">Сгенерировать вариант</span>
+                  <Icons.Play /> <span className="ml-2">РЎРіРµРЅРµСЂРёСЂРѕРІР°С‚СЊ РІР°СЂРёР°РЅС‚</span>
                 </button>
                 <button onClick={() => setActiveTab('bank')} className="bg-white border-2 border-slate-200 hover:border-slate-300 text-slate-700 font-bold py-4 px-8 rounded-2xl transition-all flex items-center justify-center text-lg">
-                  <Icons.Book /> <span className="ml-2">Решать по темам</span>
+                  <Icons.Book /> <span className="ml-2">Р РµС€Р°С‚СЊ РїРѕ С‚РµРјР°Рј</span>
                 </button>
               </div>
             </div>
@@ -296,20 +296,20 @@ export default function App() {
               <div className="flex items-center gap-4">
                 <div className="bg-blue-100 text-blue-800 p-3 rounded-xl"><Icons.Play /></div>
                 <div>
-                  <h2 className="text-xl font-bold text-slate-900">Вариант RUSEGE-{variantId}</h2>
-                  <p className="text-sm font-medium text-slate-500">Заданий: {currentTest.length}</p>
+                  <h2 className="text-xl font-bold text-slate-900">Р’Р°СЂРёР°РЅС‚ RUSEGE-{variantId}</h2>
+                  <p className="text-sm font-medium text-slate-500">Р—Р°РґР°РЅРёР№: {currentTest.length}</p>
                 </div>
               </div>
               <button onClick={() => setActiveTab('print_preview')} className="bg-slate-900 hover:bg-slate-800 text-white font-medium py-2.5 px-5 rounded-xl flex items-center shadow-md transition-all">
-                <Icons.Printer /> <span className="ml-2">Версия для печати (PDF)</span>
+                <Icons.Printer /> <span className="ml-2">Р’РµСЂСЃРёСЏ РґР»СЏ РїРµС‡Р°С‚Рё (PDF)</span>
               </button>
             </div>
 
             {testResults && (
               <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 p-8 rounded-2xl mb-8 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6">
                 <div>
-                  <h3 className="text-2xl font-black text-green-900 mb-2">Ваш результат: {testResults.score} из {testResults.total}</h3>
-                  <p className="text-green-700 font-medium">Внимательно изучите разбор ошибок к каждому заданию.</p>
+                  <h3 className="text-2xl font-black text-green-900 mb-2">Р’Р°С€ СЂРµР·СѓР»СЊС‚Р°С‚: {testResults.score} РёР· {testResults.total}</h3>
+                  <p className="text-green-700 font-medium">Р’РЅРёРјР°С‚РµР»СЊРЅРѕ РёР·СѓС‡РёС‚Рµ СЂР°Р·Р±РѕСЂ РѕС€РёР±РѕРє Рє РєР°Р¶РґРѕРјСѓ Р·Р°РґР°РЅРёСЋ.</p>
                 </div>
                 <div className="text-6xl font-black text-green-600 bg-white p-6 rounded-2xl shadow-sm">
                   {Math.round((testResults.score / testResults.total) * 100)}<span className="text-3xl text-green-400">%</span>
@@ -330,10 +330,10 @@ export default function App() {
                     <div className="flex-1">
                       <p className="whitespace-pre-wrap text-slate-800 text-[15px] sm:text-base leading-relaxed mb-6 font-medium">{task.text}</p>
                       <div className="flex flex-col sm:flex-row gap-4 sm:items-center bg-slate-50 p-4 rounded-xl border border-slate-100">
-                        <span className="text-sm font-bold text-slate-500 uppercase tracking-wider hidden sm:block">Ответ:</span>
+                        <span className="text-sm font-bold text-slate-500 uppercase tracking-wider hidden sm:block">РћС‚РІРµС‚:</span>
                         <input
                           type="text"
-                          placeholder="Введите ответ без пробелов..."
+                          placeholder="Р’РІРµРґРёС‚Рµ РѕС‚РІРµС‚ Р±РµР· РїСЂРѕР±РµР»РѕРІ..."
                           value={userAnswers[task.id] || ''}
                           onChange={(e) => setUserAnswers(prev => ({ ...prev, [task.id]: e.target.value }))}
                           disabled={!!testResults}
@@ -342,16 +342,16 @@ export default function App() {
                         {wasChecked && (
                           <div className="flex items-center">
                             {isCorrect ? (
-                              <span className="flex items-center text-green-600 font-bold bg-green-100 px-3 py-2 rounded-lg"><Icons.CheckCircle /> <span className="ml-2">Верно</span></span>
+                              <span className="flex items-center text-green-600 font-bold bg-green-100 px-3 py-2 rounded-lg"><Icons.CheckCircle /> <span className="ml-2">Р’РµСЂРЅРѕ</span></span>
                             ) : (
-                              <span className="flex items-center text-red-600 font-bold bg-red-100 px-3 py-2 rounded-lg"><Icons.XCircle /> <span className="ml-2">Ответ: {task.answer}</span></span>
+                              <span className="flex items-center text-red-600 font-bold bg-red-100 px-3 py-2 rounded-lg"><Icons.XCircle /> <span className="ml-2">РћС‚РІРµС‚: {task.answer}</span></span>
                             )}
                           </div>
                         )}
                       </div>
                       {wasChecked && task.explanation && (
                         <div className="mt-4 bg-blue-50 border border-blue-100 rounded-xl p-5 text-blue-900 text-sm">
-                          <div className="flex items-center gap-2 font-bold mb-2"><Icons.Info /> Разбор:</div>
+                          <div className="flex items-center gap-2 font-bold mb-2"><Icons.Info /> Р Р°Р·Р±РѕСЂ:</div>
                           <p className="leading-relaxed">{task.explanation}</p>
                         </div>
                       )}
@@ -364,7 +364,7 @@ export default function App() {
             {!testResults && (
               <div className="mt-10 flex justify-end">
                 <button onClick={checkTest} className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-2xl shadow-lg shadow-blue-600/30 transition-all text-xl">
-                  Завершить и проверить
+                  Р—Р°РІРµСЂС€РёС‚СЊ Рё РїСЂРѕРІРµСЂРёС‚СЊ
                 </button>
               </div>
             )}
@@ -374,7 +374,7 @@ export default function App() {
         {activeTab === 'bank' && (
           <div className="flex flex-col md:flex-row gap-6 animate-fade-in">
             <div className="w-full md:w-64 bg-white rounded-2xl shadow-sm border border-slate-200 p-4 h-fit md:sticky md:top-24">
-              <h3 className="font-bold text-lg text-slate-800 mb-4 px-2">Выберите задание:</h3>
+              <h3 className="font-bold text-lg text-slate-800 mb-4 px-2">Р’С‹Р±РµСЂРёС‚Рµ Р·Р°РґР°РЅРёРµ:</h3>
               <div className="grid grid-cols-4 md:grid-cols-2 gap-2 max-h-[60vh] overflow-y-auto pr-2 no-scrollbar">
                 {Array.from({length: 26}).map((_, i) => {
                   const num = i + 1;
@@ -384,7 +384,7 @@ export default function App() {
                       className={`flex flex-col items-center justify-center p-3 rounded-xl border transition-all ${selectedBankTask === num ? 'bg-indigo-600 border-indigo-600 text-white shadow-md' : 'bg-slate-50 border-slate-200 hover:border-indigo-300 hover:bg-indigo-50 text-slate-700'}`}
                     >
                       <span className="font-bold text-lg">{num}</span>
-                      <span className={`text-xs ${selectedBankTask === num ? 'text-indigo-200' : 'text-slate-400'}`}>{count > 0 ? count + ' шт.' : '—'}</span>
+                      <span className={`text-xs ${selectedBankTask === num ? 'text-indigo-200' : 'text-slate-400'}`}>{count > 0 ? count + ' С€С‚.' : 'вЂ”'}</span>
                     </button>
                   );
                 })}
@@ -395,30 +395,30 @@ export default function App() {
               {!selectedBankTask ? (
                 <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-12 text-center flex flex-col items-center justify-center text-slate-500">
                   <div className="bg-slate-100 p-4 rounded-full mb-4 text-slate-400"><Icons.Book /></div>
-                  <h2 className="text-xl font-bold text-slate-700 mb-2">Банк заданий ЕГЭ</h2>
-                  <p>Выберите номер задания в меню слева, чтобы начать точечную тренировку.</p>
+                  <h2 className="text-xl font-bold text-slate-700 mb-2">Р‘Р°РЅРє Р·Р°РґР°РЅРёР№ Р•Р“Р­</h2>
+                  <p>Р’С‹Р±РµСЂРёС‚Рµ РЅРѕРјРµСЂ Р·Р°РґР°РЅРёСЏ РІ РјРµРЅСЋ СЃР»РµРІР°, С‡С‚РѕР±С‹ РЅР°С‡Р°С‚СЊ С‚РѕС‡РµС‡РЅСѓСЋ С‚СЂРµРЅРёСЂРѕРІРєСѓ.</p>
                 </div>
               ) : (
                 <div className="space-y-6">
                   <div className="bg-indigo-50 border border-indigo-100 p-6 rounded-2xl flex items-center gap-4">
                     <div className="bg-indigo-600 text-white w-12 h-12 rounded-xl flex items-center justify-center font-bold text-xl shadow-sm">{selectedBankTask}</div>
-                    <h2 className="text-2xl font-bold text-indigo-900">Задание №{selectedBankTask}</h2>
-                    <span className="text-indigo-500 font-medium">{getTaskCount(selectedBankTask)} заданий</span>
+                    <h2 className="text-2xl font-bold text-indigo-900">Р—Р°РґР°РЅРёРµ в„–{selectedBankTask}</h2>
+                    <span className="text-indigo-500 font-medium">{getTaskCount(selectedBankTask)} Р·Р°РґР°РЅРёР№</span>
                   </div>
 
                   {(!tasksDatabase[selectedBankTask] || tasksDatabase[selectedBankTask].length === 0) ? (
-                    <div className="bg-white rounded-2xl border border-slate-200 p-8 text-center text-slate-500">Задания этого типа скоро будут добавлены.</div>
+                    <div className="bg-white rounded-2xl border border-slate-200 p-8 text-center text-slate-500">Р—Р°РґР°РЅРёСЏ СЌС‚РѕРіРѕ С‚РёРїР° СЃРєРѕСЂРѕ Р±СѓРґСѓС‚ РґРѕР±Р°РІР»РµРЅС‹.</div>
                   ) : (
                     tasksDatabase[selectedBankTask].map((task) => {
                       const isChecked = bankResults[task.id] !== undefined;
                       return (
                         <div key={task.id} className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 relative overflow-hidden">
                           {isChecked && <div className={`absolute top-0 left-0 w-1.5 h-full ${bankResults[task.id] ? 'bg-green-500' : 'bg-red-500'}`}></div>}
-                          <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 border-b pb-2">Практика</div>
+                          <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 border-b pb-2">РџСЂР°РєС‚РёРєР°</div>
                           <p className="whitespace-pre-wrap text-slate-800 text-[15px] leading-relaxed mb-6 font-medium">{task.text}</p>
                           <div className="flex flex-col sm:flex-row gap-3">
                             <input
-                              type="text" placeholder="Ваш ответ..."
+                              type="text" placeholder="Р’Р°С€ РѕС‚РІРµС‚..."
                               value={bankAnswers[task.id] || ''}
                               onChange={(e) => setBankAnswers(prev => ({ ...prev, [task.id]: e.target.value }))}
                               disabled={isChecked}
@@ -427,17 +427,17 @@ export default function App() {
                             {!isChecked ? (
                               <button onClick={() => handleBankAnswerCheck(task.id, task.answer)} disabled={!bankAnswers[task.id] || !bankAnswers[task.id].trim().length}
                                 className="bg-slate-800 hover:bg-slate-700 disabled:opacity-50 text-white font-semibold py-2.5 px-6 rounded-lg transition-colors">
-                                Проверить
+                                РџСЂРѕРІРµСЂРёС‚СЊ
                               </button>
                             ) : (
                               <div className="flex items-center text-sm font-bold bg-slate-100 px-4 py-2 rounded-lg">
-                                {bankResults[task.id] ? <span className="text-green-600">Верно!</span> : <span className="text-red-600">Ответ: {task.answer}</span>}
+                                {bankResults[task.id] ? <span className="text-green-600">Р’РµСЂРЅРѕ!</span> : <span className="text-red-600">РћС‚РІРµС‚: {task.answer}</span>}
                               </div>
                             )}
                           </div>
                           {isChecked && task.explanation && (
                             <div className="mt-6 bg-slate-50 border border-slate-200 rounded-xl p-4 text-slate-700 text-sm">
-                              <span className="font-bold text-slate-900 block mb-1">Разбор:</span>
+                              <span className="font-bold text-slate-900 block mb-1">Р Р°Р·Р±РѕСЂ:</span>
                               {task.explanation}
                             </div>
                           )}
@@ -455,22 +455,22 @@ export default function App() {
           <div className="bg-white rounded-3xl shadow-sm border border-slate-200 p-8 sm:p-12 animate-fade-in">
             <div className="flex items-center gap-4 mb-8">
               <div className="bg-blue-100 text-blue-700 p-3 rounded-2xl"><Icons.BarChart /></div>
-              <h2 className="text-3xl font-extrabold text-slate-900">Ваша статистика</h2>
+              <h2 className="text-3xl font-extrabold text-slate-900">Р’Р°С€Р° СЃС‚Р°С‚РёСЃС‚РёРєР°</h2>
             </div>
             {stats.length === 0 ? (
               <div className="text-center py-16 text-slate-500 bg-slate-50 rounded-2xl border border-dashed border-slate-300">
-                <p className="text-lg font-medium">Вы ещё не решили ни одного полного варианта.</p>
-                <button onClick={() => setActiveTab('home')} className="mt-4 text-blue-600 font-bold hover:underline">Вернуться на главную</button>
+                <p className="text-lg font-medium">Р’С‹ РµС‰С‘ РЅРµ СЂРµС€РёР»Рё РЅРё РѕРґРЅРѕРіРѕ РїРѕР»РЅРѕРіРѕ РІР°СЂРёР°РЅС‚Р°.</p>
+                <button onClick={() => setActiveTab('home')} className="mt-4 text-blue-600 font-bold hover:underline">Р’РµСЂРЅСѓС‚СЊСЃСЏ РЅР° РіР»Р°РІРЅСѓСЋ</button>
               </div>
             ) : (
               <div className="overflow-x-auto rounded-xl border border-slate-200">
                 <table className="w-full text-left border-collapse">
                   <thead>
                     <tr className="bg-slate-50 text-slate-600 text-sm uppercase tracking-wider">
-                      <th className="py-4 px-6 font-bold">Дата</th>
-                      <th className="py-4 px-6 font-bold">Вариант</th>
-                      <th className="py-4 px-6 font-bold">Баллы</th>
-                      <th className="py-4 px-6 font-bold">Успешность</th>
+                      <th className="py-4 px-6 font-bold">Р”Р°С‚Р°</th>
+                      <th className="py-4 px-6 font-bold">Р’Р°СЂРёР°РЅС‚</th>
+                      <th className="py-4 px-6 font-bold">Р‘Р°Р»Р»С‹</th>
+                      <th className="py-4 px-6 font-bold">РЈСЃРїРµС€РЅРѕСЃС‚СЊ</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100">
@@ -482,7 +482,7 @@ export default function App() {
                         <td className="py-4 px-6 font-bold text-slate-900">RUSEGE-{s.variant}</td>
                         <td className="py-4 px-6">
                           <span className={`py-1.5 px-3 rounded-lg font-bold text-sm ${percentage >= 80 ? 'bg-green-100 text-green-800' : percentage >= 50 ? 'bg-yellow-100 text-yellow-800' : 'bg-red-100 text-red-800'}`}>
-                            {s.score} из {s.total}
+                            {s.score} РёР· {s.total}
                           </span>
                         </td>
                         <td className="py-4 px-6">
