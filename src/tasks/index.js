@@ -1,15 +1,32 @@
-import { tasks as t1_2 } from './tasks1-2.js';
-import { tasks as t3_4 } from './tasks3-4.js';
-import { tasks as t5_8 } from './tasks5-8.js';
-import { tasks as t9_12 } from './tasks9-12.js';
-import { tasks as t13_19 } from './tasks13-19.js';
-import { tasks as t20_26 } from './tasks20-26.js';
+import { tasks as t1 } from './neofamily_line1.js';
+import { tasks as t2 } from './neofamily_line2.js';
+import { tasks as t3 } from './neofamily_line3.js';
+import { tasks as t4 } from './neofamily_line4.js';
+import { tasks as t5 } from './neofamily_line5.js';
+import { tasks as t6 } from './neofamily_line6.js';
+import { tasks as t7 } from './neofamily_line7.js';
+import { tasks as t8 } from './neofamily_line8.js';
+import { tasks as t9 } from './neofamily_line9.js';
+import { tasks as t10 } from './neofamily_line10.js';
+import { tasks as t11 } from './neofamily_line11.js';
+import { tasks as t12 } from './neofamily_line12.js';
+import { tasks as t13 } from './neofamily_line13.js';
+import { tasks as t14 } from './neofamily_line14.js';
+import { tasks as t15 } from './neofamily_line15.js';
+import { tasks as t16 } from './neofamily_line16.js';
+import { tasks as t17 } from './neofamily_line17.js';
+import { tasks as t18 } from './neofamily_line18.js';
+import { tasks as t21 } from './neofamily_line21.js';
+import { tasks as t22 } from './neofamily_line22.js';
+import { tasks as t23 } from './neofamily_line23.js';
+import { tasks as t24 } from './neofamily_line24.js';
+import { tasks as t25 } from './neofamily_line25.js';
+import { tasks as t26 } from './neofamily_line26.js';
 
-export const tasksDatabase = {
-  ...t1_2,
-  ...t3_4,
-  ...t5_8,
-  ...t9_12,
-  ...t13_19,
-  ...t20_26,
+const neofamilyData = {
+  ...t1, ...t2, ...t3, ...t4, ...t5, ...t6, ...t7, ...t8, ...t9, ...t10,
+  ...t11, ...t12, ...t13, ...t14, ...t15, ...t16, ...t17, ...t18,
+  ...t21, ...t22, ...t23, ...t24, ...t25, ...t26
 };
+
+export const tasksDatabase = neofamilyData;
